@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="startGame()">
+<link rel="stylesheet" href="style.css">
+<marquee style="marquee-speed: slow" > CaseStudy Modul 1 in Codegym </marquee>
+<audio autoplay loop><source src="ChocoboRacingWin-HoaTau-3316611.mp3"></audio>
+<audio id="eatmussic"><source src="bell.mp3"></audio>
+<h1>Game rắn săn mồi</h1>
+<div class="one">
+    <div class="two">
+        <div class="three">Design by</div>
+        <div class="three">Group</div>
+        <div class="three">Start or Pause</div>
+        <div class="three">Time</div>
+    </div>
+    <div class="two">
+        <div class="three">Vũ Văn Mừng</div>
+        <div class="three">C1020G2</div>
+        <div class="three" style="padding-top: 0px">
+            <button onclick="pauseGame()">Pause</button>
+            <button onclick="startGame()">Continue</button>
+        </div>
+        <div class="three">
+            <label id="minutes">00</label>:<label id="seconds">00</label>
+        </div>
+    </div>
+</div>
+<canvas id="canvas" width="400" height="400"></canvas>
+<img src="grass.jpg" id="grass" style="display: none" width="300" height="300">
+<script>
+    let flag = true;
+    let minutesLabel = document.getElementById("minutes");
+    let secondsLabel = document.getElementById("seconds");
+    let totalSeconds = 0;
+    setInterval(setTime, 1000);
+    function setTime() {
+        ++totalSeconds;
+        secondsLabel.innerHTML = pad(totalSeconds % 60);
+        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+    }
+    function pad(value) {
+        let valueString = value + "";
+        if (valueString.length < 2) {
+            return "0" + valueString;
+        } else {
+            return valueString;
+        }
+    }
+</script>
+</body>
+<script src="snake.js"></script>
+<script src="food1.js"></script>
+<script src="food.js"></script>
+<script src="game.js"></script>
+</html>
