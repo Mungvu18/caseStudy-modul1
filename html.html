@@ -2,59 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Vũ Văn Mừng - C2010G2</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="startGame()">
+<body onload=game.drawbackgoundlaw();>
 <link rel="stylesheet" href="style.css">
-<marquee style="marquee-speed: slow" > CaseStudy Modul 1 in Codegym </marquee>
-<audio autoplay loop><source src="ChocoboRacingWin-HoaTau-3316611.mp3"></audio>
-<audio id="eatmussic"><source src="bell.mp3"></audio>
-<h1>Game rắn săn mồi</h1>
-<div class="one">
-    <div class="two">
-        <div class="three">Design by</div>
-        <div class="three">Group</div>
-        <div class="three">Start or Pause</div>
-        <div class="three">Time</div>
-    </div>
-    <div class="two">
-        <div class="three">Vũ Văn Mừng</div>
-        <div class="three">C1020G2</div>
-        <div class="three" style="padding-top: 0px">
-            <button onclick="pauseGame()">Pause</button>
-            <button onclick="startGame()">Continue</button>
-        </div>
-        <div class="three">
-            <label id="minutes">00</label>:<label id="seconds">00</label>
-        </div>
-    </div>
-</div>
-<canvas id="canvas" width="400" height="400"></canvas>
-<img src="grass.jpg" id="grass" style="display: none" width="300" height="300">
-<script>
-    let flag = true;
-    let minutesLabel = document.getElementById("minutes");
-    let secondsLabel = document.getElementById("seconds");
-    let totalSeconds = 0;
-    setInterval(setTime, 1000);
-    function setTime() {
-        ++totalSeconds;
-        secondsLabel.innerHTML = pad(totalSeconds % 60);
-        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-    }
-    function pad(value) {
-        let valueString = value + "";
-        if (valueString.length < 2) {
-            return "0" + valueString;
-        } else {
-            return valueString;
-        }
-    }
-</script>
-</body>
+<marquee style="marquee-speed: slow"><h3>CaseStudy of Vũ Văn Mừng Group C2010G2 Modul 1 in Codegym </h3></marquee>
+<audio autoplay loop>
+    <source src="audio/GreenForest_CC-BY-SA_by_Metaruka.ogg">
+</audio>
+<audio id="eatmussic">
+    <source src="audio/EatSound_CC0_by_EugeneLoza.ogg">
+</audio>
+<audio id="endGameMussic">
+    <source src="audio/DieSound_CC0_by_EugeneLoza.ogg">
+</audio>
+<audio src="audio/eatToxic.mp3" id="eatToxicmussic"></audio>
+<audio src="audio/verticalFood.mp3" id="verticalFood"></audio>
+<audio src="audio/thankboss.mp3" id="thankBoss"></audio>
+<center><h2>Game rắn săn mồi</h2></center>
+<center><canvas id="canvas" width="400" height="400"></canvas></center>
+<img src="img/grass.jpg" id="grass" style="display: none" width="300" height="300">
+<img src="img/background2.jpg" id="backgroundGame" style="display: none">
+<img src="img/bonus.png" id="bonus" style="display: none">
 <script src="snake.js"></script>
 <script src="food1.js"></script>
 <script src="food.js"></script>
+<script src="bigFood.js"></script>
 <script src="game.js"></script>
+<script>
+    let timeloop = 200;
+    let eatmussic = document.querySelector('#eatmussic');
+    let eatToxicmussic = document.querySelector('#eatToxicmussic');
+    let endGamemussic = document.querySelector("#endGameMussic");
+    let eatVioletFood= document.querySelector("#verticalFood");
+    let thankBoss = document.querySelector("#thankBoss");
+    let flag = true;
+    let game = new ManaGame();
+    function levelhard() {
+        pauseGame();
+        timeloop = 30;
+        startGame();
+    }
+
+    function levelnormal() {
+        pauseGame();
+        timeloop = 50;
+        startGame();
+    }
+
+    function startGame() {
+            run = setInterval(function () {
+                game.clearRect();
+                game.drawbackground();
+                game.drawScore();
+                game.display();
+                game.draw();
+            }, timeloop);
+            flag = true;
+    }
+
+    function pauseGame() {
+            clearInterval(run);
+            flag = false;
+    }
+</script>
+</body>
+
 </html>

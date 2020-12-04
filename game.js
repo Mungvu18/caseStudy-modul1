@@ -5,53 +5,65 @@ class ManaGame {
         this.snake = new Snake(this);
         this.foodToxic = new Foodtoxic(this);
         this.food = new Food(this);
-        this.score=0;
+        this.bigFood = new Bigfood(this);
+        this.score = 0;
     }
-    drawScore(){
+
+    drawScore() {
         this.context.beginPath();
-        this.context.fillstyle="blue";
-        this.context.font="bold 20px verdana, sans-serif";
-        this.context.fillText("score  "+ this.score, 10,20);
+        this.context.fillstyle = "blue";
+        this.context.font = "bold 20px verdana, sans-serif";
+        this.context.fillText("score  " + this.score, 10, 20);
+        if (this.score > 5) {
+            levelnormal();
+        } else if (this.score > 10) {
+            levelhard();
+        }
     }
-    drawbackground(){
+
+    drawbackgoundlaw() {
+        this.backgroundGame = document.getElementById('backgroundGame');
+        this.context.beginPath();
+        this.context.drawImage(this.backgroundGame, 0, 0);
+        document.addEventListener('keydown', ev => {
+            if (ev.keyCode == 13) {
+                startGame();
+            }
+        })
+    }
+
+    drawbackground() {
         this.grass = document.getElementById('grass');
         this.context.beginPath();
-        this.context.drawImage(this.grass,0,0);
+        this.context.drawImage(this.grass, 0, 0);
     }
     display() {
         this.snake.display();
-        if (this.snake.eat(this.food.x,this.food.y)) {
+        if (this.snake.eat(this.food.x, this.food.y)) {
             this.food.display();
         }
-        if (this.snake.eatToxic(this.foodToxic.x,this.foodToxic.y)) {
+        if (this.snake.eatBigFood(this.bigFood.x, this.bigFood.y)) {
+            this.bigFood.display();
+        }
+        if (this.snake.eatToxic(this.foodToxic.x, this.foodToxic.y)) {
             this.foodToxic.display();
         }
     }
+
     // hàm xóa
-    clearRect(){
+    clearRect() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
+
     // ham ve
     draw() {
         // this.clearRect();
         this.snake.draw();
         this.food.draw();
         this.foodToxic.draw();
+        this.bigFood.draw();
     }
-}
-let game = new ManaGame();
-// setInterval(my(),1000)
-    function startGame() {
-        let run = setInterval(function (){
-            game.clearRect();
-            game.drawbackground();
-            game.drawScore();
-            game.display();
-            game.draw();
-        },1000);
-    }
-    function pauseGame() {
-       clearInterval(run);
-    }
-    startGame();
+}  // hàm chạy game
+
+
 
