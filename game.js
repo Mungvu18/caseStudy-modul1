@@ -26,7 +26,7 @@ class ManaGame {
         this.context.beginPath();
         this.context.drawImage(this.backgroundGame, 0, 0);
         document.addEventListener('keydown', ev => {
-            if (ev.keyCode == 13) {
+            if (ev.keyCode == KEYCODEENTER) {
                 startGame();
             }
         })

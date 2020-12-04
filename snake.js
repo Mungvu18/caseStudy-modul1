@@ -39,23 +39,23 @@ class Snake {
     eventKeydown(ev) {
         document.addEventListener('keydown', ev => {
             if (flag == true) {
-                if (ev.keyCode == 37 && this.dx == 0) {
+                if (ev.keyCode == KEYCODELEFT && this.dx == 0) {
                     this.dx = -this.unit;
                     this.dy = 0;
-                } else if (ev.keyCode == 38 && this.dy == 0) {
+                } else if (ev.keyCode == KEYCODEUP && this.dy == 0) {
                     this.dx = 0;
                     this.dy = -this.unit;
-                } else if (ev.keyCode == 39 && this.dx == 0) {
+                } else if (ev.keyCode == KEYCODERIGHT && this.dx == 0) {
                     this.dx = this.unit;
                     this.dy = 0;
-                } else if (ev.keyCode == 40 && this.dy == 0) {
+                } else if (ev.keyCode == KEYCODEDOWN && this.dy == 0) {
                     this.dx = 0;
                     this.dy = this.unit;
-                } else if (ev.keyCode == 32) {
+                } else if (ev.keyCode == KEYCODESPACE) {
                     pauseGame();
                 }
             } else {
-                if (ev.keyCode == 13) {
+                if (ev.keyCode == KEYCODEENTER) {
                     startGame();
                 }
             }

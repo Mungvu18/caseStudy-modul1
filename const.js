@@ -1,0 +1,7 @@
+const KEYCODELEFT = 37;
+const KEYCODEUP = 38;
+const KEYCODERIGHT = 39;
+const KEYCODEDOWN = 40;
+const KEYCODEENTER = 13;
+const KEYCODESPACE = 32;
+const CELLGRID = 19;

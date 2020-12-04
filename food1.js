@@ -7,8 +7,8 @@ class Foodtoxic {
     }
 
     display() {
-        this.x = (Math.floor(Math.random() * 19)) * this.unit;
-        this.y = (Math.floor(Math.random() * 19)) * this.unit;
+        this.x = (Math.floor(Math.random() * CELLGRID)) * this.unit;
+        this.y = (Math.floor(Math.random() * CELLGRID)) * this.unit;
     }
 
     draw() {
