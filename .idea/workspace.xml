@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbbea667-45bc-4d4f-8dd5-750d92f0429d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bigFood.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChocoboRacingWin-HoaTau-3316611.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bell.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grass.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/html.html" beforeDir="false" afterPath="$PROJECT_DIR$/html.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="cbbea667-45bc-4d4f-8dd5-750d92f0429d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +40,7 @@
       <workItem from="1606959304633" duration="23726000" />
       <workItem from="1607004364350" duration="11898000" />
       <workItem from="1607016920701" duration="141000" />
+      <workItem from="1607044157154" duration="619000" />
     </task>
     <servers />
   </component>
